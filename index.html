@@ -1,158 +1,177 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dostup RF - VPN & Proxy Services</title>
-  <style>
-    :root { --primary: #0284c7; --primary-dark: #0369a1; --bg: #f9fafb; --text: #1f2937; --text-light: #4b5563; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: 80px 20px; text-align: center; }
-    header h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
-    header p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.95; }
-    .btn { display: inline-block; padding: 15px 40px; background: white; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: none; cursor: pointer; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-    .btn-secondary { background: transparent; border: 2px solid white; color: white; margin-left: 15px; box-shadow: none; }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-    section { padding: 80px 20px; }
-    h2 { text-align: center; font-size: 2.25rem; margin-bottom: 20px; }
-    .subtitle { text-align: center; font-size: 1.1rem; color: var(--text-light); max-width: 700px; margin: 0 auto 50px; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .feature-card { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: all 0.3s; }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-    .feature-card h3 { color: var(--primary); margin-bottom: 15px; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-    .pricing-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 40px 30px; text-align: center; transition: all 0.3s; }
-    .pricing-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-    .pricing-card.featured { border-color: var(--primary); background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); }
-    .price { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin: 20px 0; }
-    .price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
-    ul { list-style: none; margin: 25px 0; text-align: left; }
-    li { padding: 10px 0; color: var(--text-light); border-bottom: 1px solid #e5e7eb; }
-    .pricing-card .btn { width: 100%; background: var(--primary); color: white; }
-    .pricing-card .btn:hover { background: var(--primary-dark); }
-    .faq-list { max-width: 800px; margin: 50px auto 0; }
-    .faq-item { background: white; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .faq-question { padding: 20px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
-    .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-light); }
-    .faq-answer.active { padding: 0 20px 20px; max-height: 500px; }
-    footer { background: #1f2937; color: white; padding: 60px 20px; text-align: center; }
-    .contact-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
-    .contact-links a { color: white; text-decoration: none; font-weight: 600; }
-    .contact-links a:hover { color: #38bdf8; }
-    @media (max-width: 768px) { .btn-secondary { margin-left: 0; margin-top: 15px; display: block; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostup RF - VPN & Proxy Services</title>
+    <style>
+        :root { --primary: #0284c7; --primary-dark: #0369a1; --bg: #f9fafb; --text: #1f2937; --text-light: #4b5563; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: 80px 20px; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
+        header p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.95; }
+        .btn { display: inline-block; padding: 15px 40px; background: white; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: none; cursor: pointer; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .btn-secondary { background: transparent; border: 2px solid white; color: white; margin-left: 15px; box-shadow: none; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+        section { padding: 80px 20px; }
+        h2 { text-align: center; font-size: 2.25rem; margin-bottom: 20px; }
+        .subtitle { text-align: center; font-size: 1.1rem; color: var(--text-light); max-width: 700px; margin: 0 auto 50px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .feature-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .pricing-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 40px 30px; text-align: center; transition: all 0.3s; }
+        .pricing-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .pricing-card.featured { border-color: var(--primary); background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); }
+        .price { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin: 20px 0; }
+        .price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
+        ul { list-style: none; margin: 25px 0; text-align: left; }
+        li { padding: 10px 0; color: var(--text-light); border-bottom: 1px solid #e5e7eb; }
+        .pricing-card .btn { width: 100%; background: var(--primary); color: white; }
+        .pricing-card .btn:hover { background: var(--primary-dark); }
+        .faq-list { max-width: 800px; margin: 50px auto 0; }
+        .faq-item { background: white; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .faq-question { padding: 20px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-light); }
+        .faq-answer.active { padding: 0 20px 20px; max-height: 500px; }
+        footer { background: #1f2937; color: white; padding: 60px 20px; text-align: center; }
+        .contact-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
+        .contact-links a { color: white; text-decoration: none; font-weight: 600; }
+        .contact-links a:hover { color: #38bdf8; }
+        @media (max-width: 768px) { .btn-secondary { margin-left: 0; margin-top: 15px; display: block; } }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Надёжный доступ в интернет</h1>
-      <p>Профессиональная настройка VPN, DNS и средств обхода блокировок</p>
-      <a href="#pricing" class="btn">Выбрать тариф</a>
-      <a href="#contact" class="btn btn-secondary">Связаться со мной</a>
-    </div>
-  </header>
-
-  <section id="services">
-    <div class="container">
-      <h2>Что я предлагаю</h2>
-      <p class="subtitle">Индивидуальные решения для стабильного интернета без цензуры</p>
-      <div class="features">
-        <div class="feature-card">
-          <h3>VPN & DPI Bypass</h3>
-          <p>Настройка современных протоколов (VLESS, Reality, Shadowsocks), которые невозможно заблокировать.</p>
+    <header>
+        <div class="container">
+            <h1>Надёжный доступ в интернет</h1>
+            <p>Профессиональная настройка VPN, DNS и средств обхода блокировок</p>
+            <a href="#pricing" class="btn">Выбрать тариф</a>
+            <a href="#contact" class="btn btn-secondary">Связаться со мной</a>
         </div>
-        <div class="feature-card">
-          <h3>Smart DNS</h3>
-          <p>Доступ к стриминговым сервисам и зарубежным сайтам без потери скорости основного интернета.</p>
+    </header>
+    <section id="services">
+        <div class="container">
+            <h2>Что я предлагаю</h2>
+            <p class="subtitle">Индивидуальные решения для стабильного интернета без цензуры</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>VPN & DPI Bypass</h3>
+                    <p>Настройка современных протоколов (VLESS, Reality, Shadowsocks), которые невозможно заблокировать.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Smart DNS</h3>
+                    <p>Доступ к стриминговым сервисам и зарубежным сайтам без потери скорости основного интернета.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Домашние серверы</h3>
+                    <p>Установка и настройка личного VPN на вашем сервере или роутере для всей семьи.</p>
+                </div>
+            </div>
         </div>
-        <div class="feature-card">
-          <h3>Домашние серверы</h3>
-          <p>Установка и настройка личного VPN на вашем сервере или роутере для всей семьи.</p>
+    </section>
+    <section id="pricing">
+        <div class="container">
+            <h2>Тарифы на настройку</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Базовый</h3>
+                    <div class="price">2000 <span>₽</span></div>
+                    <ul>
+                        <li>Настройка на 1 устройстве</li>
+                        <li>Протоколы VLESS/Reality</li>
+                        <li>Инструкция по использованию</li>
+                        <li>Поддержка в течение 7 дней</li>
+                    </ul>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Стандарт</h3>
+                    <div class="price">4500 <span>₽</span></div>
+                    <ul>
+                        <li>Настройка до 6 устройств</li>
+                        <li>Оптимизация под стриминг</li>
+                        <li>Настройка роутера (если есть)</li>
+                        <li>Приоритетная поддержка</li>
+                    </ul>
+                    <a href="#contact" class="btn">Выбрать</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Бизнес</h3>
+                    <div class="price">10000 <span>₽+</span></div>
+                    <ul>
+                        <li>Корпоративные решения</li>
+                        <li>Выделенный сервер</li>
+                        <li>Полная анонимность</li>
+                        <li>Техническое сопровождение</li>
+                    </ul>
+                    <a href="#contact" class="btn">Обсудить</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing">
-    <div class="container">
-      <h2>Тарифы на настройку</h2>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Базовый</h3>
-          <div class="price">2000 <span>₽</span></div>
-          <ul>
-            <li>Настройка на 1 устройстве</li>
-            <li>Протоколы VLESS/Reality</li>
-            <li>Инструкция по использованию</li>
-            <li>Поддержка в течение 7 дней</li>
-          </ul>
-          <a href="#contact" class="btn">Заказать</a>
+    </section>
+    <section id="faq">
+        <div class="container">
+            <h2>Частые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Это законно? <span>+</span></div>
+                    <div class="faq-answer"><p>Использование VPN и средств обхода блокировок в личных целях не запрещено законодательством РФ.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Будет ли работать на роутере? <span>+</span></div>
+                    <div class="faq-answer"><p>Да, если ваш роутер поддерживает установку сторонних прошивок или имеет встроенные клиенты VPN (OpenWRT, Keenetic и др.).</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Что делать, если VPN перестанет работать? <span>+</span></div>
+                    <div class="faq-answer"><p>Я предоставляю гарантию на настройку (от 7 до 30 дней в зависимости от тарифа). В случае проблем я бесплатно перенастрою доступ или предложу альтернативный протокол.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Нужно ли мне покупать сервер самому? <span>+</span></div>
+                    <div class="faq-answer"><p>Я помогу выбрать и арендовать оптимальный сервер у зарубежного хостера (от 4-5$ в месяц). Оплата обычно возможна российскими картами через посредников или криптой.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Как происходит процесс настройки? <span>+</span></div>
+                    <div class="faq-answer"><p>Обычно удаленно через AnyDesk или путем предоставления доступа к вашему серверу/роутеру. Весь процесс занимает от 40 до 90 минут.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Могу ли я делиться доступом с друзьями? <span>+</span></div>
+                    <div class="faq-answer"><p>Да, количество устройств ограничено только мощностью выбранного сервера и вашим тарифом (в стандарте до 6 устройств).</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Сколько времени занимает настройка? <span>+</span></div>
+                    <div class="faq-answer"><p>Для одного устройства — 1-2 рабочих дня. Для сложных решений (роутеры, серверы) — по согласованию.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Какие гарантии вы даете? <span>+</span></div>
+                    <div class="faq-answer"><p>Гарантия стабильной работы протоколов, поддержка в чате и манибэк в случае невозможности настройки на вашем оборудовании.</p></div>
+                </div>
+            </div>
         </div>
-        <div class="pricing-card featured">
-          <h3>Стандарт</h3>
-          <div class="price">4500 <span>₽</span></div>
-          <ul>
-            <li>Настройка до 6 устройств</li>
-            <li>Оптимизация под стриминг</li>
-            <li>Настройка роутера (если есть)</li>
-            <li>Приоритетная поддержка</li>
-          </ul>
-          <a href="#contact" class="btn">Выбрать</a>
+    </section>
+    <footer id="contact">
+        <div class="container">
+            <h2>Готовы начать?</h2>
+            <p>Напишите мне для консультации или заказа настройки</p>
+            <div class="contact-links">
+                <a href="https://t.me/yourusername" target="_blank">Telegram</a>
+                <a href="https://vk.com/yourid" target="_blank">ВКонтакте</a>
+            </div>
+            <p>© 2026 Dostup RF. Все права защищены.</p>
         </div>
-        <div class="pricing-card">
-          <h3>Бизнес</h3>
-          <div class="price">10000 <span>₽+</span></div>
-          <ul>
-            <li>Корпоративные решения</li>
-            <li>Выделенный сервер</li>
-            <li>Полная анонимность</li>
-            <li>Техническое сопровождение</li>
-          </ul>
-          <a href="#contact" class="btn">Обсудить</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="container">
-      <h2>Частые вопросы</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">Это законно? <span>+</span></div>
-          <div class="faq-answer"><p>Использование VPN и средств обхода блокировок в личных целях не запрещено законодательством РФ.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Будет ли работать на роутере? <span>+</span></div>
-          <div class="faq-answer"><p>Да, если ваш роутер поддерживает установку сторонних прошивок или имеет встроенные клиенты VPN (OpenWRT, Keenetic и др.).</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <div class="container">
-      <h2>Готовы начать?</h2>
-      <p>Напишите мне для консультации или заказа настройки</p>
-      <div class="contact-links">
-        <a href="https://t.me/yourusername" target="_blank">Telegram</a>
-        <a href="https://vk.com/yourid" target="_blank">ВКонтакте</a>
-      </div>
-      <p>&copy; 2026 Dostup RF. Все права защищены.</p>
-    </div>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.faq-question').forEach(item => {
-      item.addEventListener('click', () => {
-        const answer = item.nextElementSibling;
-        answer.classList.toggle('active');
-        item.querySelector('span').textContent = answer.classList.contains('active') ? '−' : '+';
-      });
-    });
-  </script>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.classList.toggle('active');
+                item.querySelector('span').textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
 </body>
 </html>
